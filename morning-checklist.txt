@@ -8,3 +8,18 @@ PROPOSALS
 IT PROJECTS
 CLOUD CHANGES
 DOCUMENTATION
+
+
+2014-OCT-20
+Dashboard
+
+Domains   - Registered sapthagiribus.in as per Ranganath request.
+Domains   - Renewed fintest.in for 2 years for Rs 1402 
+TAG         - Weekly call discussed on the importance of communication and updates in shift and during shift change.
+MC-SAATCHI - Installed Desktop experience to enable drive mapping on windows servers.
+
+Pending  - Hardening of rimsupport web and DB
+Documentation - Windows mapping drive
+Mail to Ranganath on domain expiry dates
+
+
