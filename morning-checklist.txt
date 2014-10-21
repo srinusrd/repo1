@@ -18,8 +18,15 @@ Domains   - Renewed fintest.in for 2 years for Rs 1402
 TAG         - Weekly call discussed on the importance of communication and updates in shift and during shift change.
 MC-SAATCHI - Installed Desktop experience to enable drive mapping on windows servers.
 
-Pending  - Hardening of rimsupport web and DB
-Documentation - Windows mapping drive
-Mail to Ranganath on domain expiry dates
+2014-OCT-21
+Dashboard
+
+Domains   - Renewed canaratourist.com domain for one year fro Rs 699.
+OFRS	  - seabirdholidays.com name server records updated. Received update from Deepak. Zone file created and records added.
+RIM          - Server hardening port changed to 22222 and non root login not checked properly.
+INTERACT-IT - hard disk size of root pratition increased and the IP address changed. Websites worked after IP is update in Route 53
+Intelligent Investor - Requested Daniel to proceed with $299 Capsula plan.
+EFFORTS - Sent efforts values to the team.
+
 
 
