@@ -1,0 +1,6 @@
+
+    Level 0 - I can identify what the actual problem is and what's causing it.
+    Level 1 - I can find/ identify an existing solution (created by someone else) and am able to apply it.
+    Level 2 - I can take a pre-made solution and tweak it to better suit this particular problem.
+    Level 3 - I can create my own solutions and don't need the help of others.
+    Level 4 - I can evaluate a solution and identify how good/ robust/ elegant it is.

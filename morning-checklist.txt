@@ -29,4 +29,21 @@ Intelligent Investor - Requested Daniel to proceed with $299 Capsula plan.
 EFFORTS - Sent efforts values to the team.
 
 
+2014-OCT-22
+Dashboard
+
+MC SAATCHI : Received mail from Piers regarding MYSQL connectivty problem from his network. Whitelisted both windows IPs in RDS database
+MC SAATCHI  : Problem with primary network - added secondary network 89.167.128.96/27 to security groups
+USELL : Phani updated vijay on usell Nagios setup and shared credentials. Call to be scheduled on Friday.
+INTERACT-IT - Found old IP in configuration files and was rectified after changing it.
+ALL : Maintenance on Sunday 26th October.
+TAG : Called Patrick and updated UPS maintenance schedule.
+SEALED AIR:
+current active list 
+espendwiseprd 11
+itespendwise 12
+eswnofirewall 1
+
+
+
 
