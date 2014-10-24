@@ -45,5 +45,17 @@ itespendwise 12
 eswnofirewall 1
 
 
+2014-OCT-24
+Dashboard
+
+DOMAIN: received expiry mail VALUELABS.COM.SG will expire on 23 Jan 2015! 
+Meeting on OTRS with Mahesh : Reports on SLA and Effort distribution.
+MYOB Project closed: To disable RT Queues. Sent mai to it suppoort to delete email accounts
+TAG : Nagios URL not working sometimes by Name . It works with IP - 172.27.96.130
+USELL: call with vijay. discussed on new plan and received SMTP details and private key.
+
+
+
+
 
 
