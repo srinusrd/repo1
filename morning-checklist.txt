@@ -54,6 +54,17 @@ MYOB Project closed: To disable RT Queues. Sent mai to it suppoort to delete ema
 TAG : Nagios URL not working sometimes by Name . It works with IP - 172.27.96.130
 USELL: call with vijay. discussed on new plan and received SMTP details and private key.
 
+2014-OCT-27
+Dashboard
+
+Vasu on leave.
+
+USELL : SMTP settings completed. Identified issues with Memory. MYSQL server port enabled and configured for monitoring.
+OTRS : By Project, By Resource, By SLA, By Time Taken - Monthly reports, Planned for daily report by user.
+TAG : Weekly call postponed to next friday. Daylight savings into effect : 2:PM to 10:30PM
+
+
+
 
 
 
