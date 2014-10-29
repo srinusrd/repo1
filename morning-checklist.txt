@@ -67,11 +67,16 @@ TAG : Weekly call postponed to next friday. Daylight savings into effect : 2:PM 
 Dashboard
 
 RIM : RIM WIKI got crashed which is hosted on 172.20.53.124.
-RIM: Sent shioft roster to the team.
+RIM: Sent shift roster to the team.
 USELL : Memory graph problem resolved. Need to set memory thresholds.
 WAELDEN: call with mahesh on mail server plan
 
 
+2014-OCT-29
+Dashboard
+
+USELL : Memory thresholds set. unnecessary db parameters removed.
+WAELDEN: call with david on wits mail server migration
 
 
 

@@ -1,3 +1,7 @@
 JENKINS websites
 
 https://www.lullabot.com/blog/article/automate-your-life-phing
+
+SUID files
+
+http://www.softpanorama.org/Tools/Find/finding_suid_and_sguid_files.shtml
