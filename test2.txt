@@ -1,2 +1,9 @@
-testing on oct 17 2014
-testing change
+Linux Sysadmin Protip
+
+You can quickly test whether boxcar notifications are working with nagios by generating a failed service or host with iptables. Choose a host or a service that nagios is monitoring and use iptables to block outbound connections.
+
+For example, if nagios was monitoring HTTP on web-server-1.example.com block all outbound packets from the monitoring server to web-server-1.exmaple.com on port 80.
+# iptables -I OUTPUT -d web-server-1.example.com -p tcp --dport 80 -j REJECT
+
+Log into the nagios web interface and Re-schedule the next check of this service for this particular service. Delete the iptables rule once you’ve finished testing.
+# iptables -D OUTPUT -d web-server-1.example.com -p tcp --dport 80 -j REJECT

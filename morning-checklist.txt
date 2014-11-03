@@ -77,6 +77,33 @@ Dashboard
 
 USELL : Memory thresholds set. unnecessary db parameters removed.
 WAELDEN: call with david on wits mail server migration
+TERRADOTTA : Kashi backup script updated with old files deletion function.
+
+
+2014-OCT-31
+Dashboard
+
+TAG: weekly call postponed to next friday - Nov-11-2014
+IT : Mail from harika on AWS instance prices
+INTERACT_IT : Setup call with Stefano
+INTELLIGENT SUPPORT : Waiting for exact ssl requirement.
+MC SAATCHI : Mail from chetan on AWS database vulnerability
+
+
+
+2014-NOV-03
+Dashboard
+
+TAG: Common time next week for TAG call
+INTELLIGENT SUPPORT : Waiting for exact ssl requirement.
+MC SAATCHI : Mail from chetan on AWS database vulnerability. Replied No action required
+INTERACT_IT : Issues with system terminations
+IT: Mail from Ravi sastry on pricing. Replied with details.
+USELL : Call tomorrow on Servers upgrade.
+
+
+
+
 
 
 
