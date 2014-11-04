@@ -102,6 +102,13 @@ IT: Mail from Ravi sastry on pricing. Replied with details.
 USELL : Call tomorrow on Servers upgrade.
 
 
+2014-NOV-04
+Dashboard
+
+
+IT: Mail from Ravi sastry on IIS. Provided solution.
+USELL : Discussed on puppet implementation. contacts to be added with vijay@usell.com
+INTERACT_IT : Call with Stefano at 4:00PM IST
 
 
 
