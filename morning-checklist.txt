@@ -111,9 +111,13 @@ USELL : Discussed on puppet implementation. contacts to be added with vijay@usel
 INTERACT_IT : Call with Stefano at 4:00PM IST
 
 
+2014-NOV-05
+Dashboard
 
-
-
-
+IT: Mail from Ravi sastry on IIS. replied queries.
+INTERACT_IT : Call completed with Stefano at 7:30PM IST. Alerts account removed from 911@interact.it
+USELL : Replied Vijay with automatic and Puppet master configuration.
+MC-Saatchi : Chetan asked for server usage details.
+WITS : Call with DAVID on WITS migration.
 
 
