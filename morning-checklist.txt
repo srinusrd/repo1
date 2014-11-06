@@ -121,3 +121,14 @@ MC-Saatchi : Chetan asked for server usage details.
 WITS : Call with DAVID on WITS migration.
 
 
+2014-NOV-06
+Dashboard
+
+TAG: Subrata and Sankar needs to be added to regular TAG Tasks. Presentation prepared and sent to Mahesh.
+USELL : Received the server details. puppet to  be installed and configured.
+MC-Saatchi : Chetan asked for server usage details.
+Sealed-air : Firewall rules to be reviewed
+Marketshare : training Schedule to the team. Discussed with Mahendher. Follow up with Srikanth on resumes.
+IT: Web server to be upgraded. Ranjan.
+
+

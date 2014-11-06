@@ -7,3 +7,102 @@ For example, if nagios was monitoring HTTP on web-server-1.example.com block all
 
 Log into the nagios web interface and Re-schedule the next check of this service for this particular service. Delete the iptables rule once you’ve finished testing.
 # iptables -D OUTPUT -d web-server-1.example.com -p tcp --dport 80 -j REJECT
+
+
+
+puppet agent notes:
+
+yum update -y
+
+    Install and start ntp
+
+yum install ntp
+chkconfig ntpd on
+service ntpd start
+
+    Ensure client can resolve puppet server via 'puppet' and 'puppet.cloud.local' via your chosen name resolution method
+    Add Puppet repository
+
+?rpm -ivh http://yum.puppetlabs.com/puppetlabs-release-el-6.noarch.rpm
+
+    ?Install Puppet agent software
+
+yum install - y puppet
+
+    On the client, test and Resolve Any Issues
+
+puppet agent --test
+
+
+    On Puppet server check certificate request and approve
+
+puppet cert --list
+
+    On the Puppet server, Sign certifcate request - copy and paste client name from list
+
+puppet cert --sign <clientName>
+
+Public key of client has been added to CA, enabling connectivity to the client from the server
+
+    On the client, run test
+
+puppet agent --test
+
+
+    On Puppet server check certificate request and approve
+
+puppet cert --list
+
+    On the Puppet server, Sign certifcate request - copy and paste client name from list
+
+puppet cert --sign <clientName>
+
+Public key of client has been added to CA, enabling connectivity to the client from the server
+
+    On the client, run test
+
+puppet agent --test
+
+
+
+Check Your Network Configuration
+
+In an agent/master deployment, you must prepare your network for Puppet’s traffic.
+
+    Firewalls: The puppet master server must allow incoming connections on port 8140, and agent nodes must be able to connect to the master on that port.
+    Name resolution: Every node must have a unique hostname. Forward and reverse DNS must both be configured correctly. (Instructions for configuring DNS are beyond the scope of this guide. If your site lacks DNS, you must write an /etc/hosts file on each node.)
+        Note: The default puppet master hostname is puppet. Your agent nodes can be ready sooner if this hostname resolves to your puppet master.
+
+Check Timekeeping on Your Puppet Master Server
+
+The puppet master server that will be acting as the certificate authority should have its system time set accurately. You should probably use NTP.
+
+
+Drawing from the report, we've put together a quick list of the top five predictors of IT performance.
+1. Peer-reviewed change approval process
+
+When the technical team holds itself accountable for the quality of its code through peer review, performance increased. When external approval (e.g., change approval boards) was required in order to deploy to production, IT performance decreased.
+
+Surprisingly, the use of external change approval processes had no impact on restore times, and had only a negligible effect on reducing failed changes. In other words, external change approval boards had a big negative impact on throughput, with negligible impact on stability.
+2. Version control for all production artifacts
+
+Version control provides a single source of truth for all changes. That means when a change fails, it’s easy to pinpoint the cause of failure and roll back to the last good state, reducing the time to recover.
+
+Version control also promotes greater collaboration between teams. The benefits of version control shouldn’t be limited to application code; in fact, organizations using version control for both system and application configurations have higher IT performance.
+3. Proactive monitoring
+
+Teams that practice proactive monitoring are able to diagnose and solve problems faster, and have a high degree of accountability.
+
+When failures are primarily reported by an external source, such as the network operations center — or worse, by customers — IT performance suffers.
+4. High-trust organizational culture
+
+One of the pillars of DevOps is culture, and we were pleased to prove what we already knew anecdotally: Culture matters. In fact, organizational culture was highly predictive of both IT performance and overall organizational performance. No one should be surprised to hear that high-trust cultures lead to greater performance, while bureaucratic and fear-based cultures are destructive to performance.
+5. Win-win relationship between dev and ops
+
+It’s not development versus operations, it’s dev plus ops. Getting devs and ops folks on the same side is half the battle. Once you've aligned on practices, tools and strategies, and adopted the cultural changes it takes to achieve collaboration, the goals of the business become shared goals, and IT performance wins.
+
+
+
+
+
+
