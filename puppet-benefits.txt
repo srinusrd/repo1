@@ -1,0 +1,31 @@
+﻿• Speed of Deployment – Initially, a new server was set up with a multi-week 
+iterative process that took the box from Jumpstart to being fully 
+functional. Each application was added as needed, and could take 
+over a month. Olsen said, “Now, it takes 20 minutes with Jumpstart 
+and just 20 minutes more until the box is ready. It is trivial and 
+repeatable; no iteration is needed to configure a machine.” 
+
+• Ease of Use and Professional Services – Though Olsen was able to learn 
+Puppet fairly easily from the wiki and similar community resources, 
+his team still found professional services to be a useful 
+investment. Puppet Labs’ professional services team assisted with 
+finding and simplifying repetitive code, while enterprise support 
+fostered a deeper understanding of the software. 
+
+• Password Synchronization – For security reasons, the passwords for each 
+server expire after 90 days. Under the old system, the expiration 
+dates were spread out, and admins wasted time regaining access and 
+re-setting passwords. Puppet allowed Heartland to synchronize its 
+passwords and simplify and streamline the necessary security 
+precautions. Olsen confirms, “We save 90 minutes on each event.” 
+
+• Environment Feature – Puppet’s environment feature was particularly
+useful in determining how well the infrastructure would work with 
+different aspects of the platform, allowing the sysadmins to test 
+out changes before committing to them. 
+
+• PCI Compliance – Because the company holds and uses personal data in many of its loyalty 
+campaigns, it is required to adhere to the Payment Card Industry 
+Data Security Standard (PCI DSS)—the international security standard 
+for the payment card industry. With a run of Puppet, PCI 
+requirements are done

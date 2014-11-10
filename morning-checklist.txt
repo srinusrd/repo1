@@ -131,4 +131,13 @@ Sealed-air : Firewall rules to be reviewed
 Marketshare : training Schedule to the team. Discussed with Mahendher. Follow up with Srikanth on resumes.
 IT: Web server to be upgraded. Ranjan.
 
+2014-NOV-10
+Dashboard
+
+TAG: Meeting with Patrick. Sent action items to Patrick. KT Times and New OOH to be shared with client.
+USELL : Received the server details. puppet to  be installed and configured. To verify the user creation.
+Sealed-air : Firewall rules to be reviewed
+Marketshare : First session completed . Places to be decided. Interviews to be continued
+IT: Web server to be upgraded. Ranjan. Completed on Friday.
+MC -Saatchi - New ticket recievd to create FTP
 
