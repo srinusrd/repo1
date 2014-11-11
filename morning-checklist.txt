@@ -141,3 +141,13 @@ Marketshare : First session completed . Places to be decided. Interviews to be c
 IT: Web server to be upgraded. Ranjan. Completed on Friday.
 MC -Saatchi - New ticket recievd to create FTP
 
+
+2014-NOV-11
+Dashboard
+
+TAG: New KT and implementaion time updated to Patrick. 
+USELL : Sent a mail to Sankar to do more tasks
+Sealed-air : Firewall rules to be reviewed. Obtained list of firewall rules. Need to verify.
+Marketshare : Second session completed. Interviews scheduled tomorrow
+MC -Saatchi - FTP user creation completed
+
