@@ -151,3 +151,29 @@ Sealed-air : Firewall rules to be reviewed. Obtained list of firewall rules. Nee
 Marketshare : Second session completed. Interviews scheduled tomorrow
 MC -Saatchi - FTP user creation completed
 
+
+2014-NOV-13
+Dashboard
+
+IT : Received payment failure
+TAG: New KT and implementaion time updated to Patrick. 
+USELL : Sent a mail to Sankar to do more tasks
+Sealed-air : Firewall rules to be reviewed. Obtained list of firewall rules. Need to verify.
+Marketshare : Second session completed. Interviews scheduled tomorrow
+MC -Saatchi - FTP user creation completed
+
+
+
+2014-NOV-17
+Dashboard
+
+IT : Taken new card details from Manoj and payment completed successfully
+USELL : Puppet user created, Java installed.
+
+2014-NOV-18
+Dashboard
+
+Marketshare : Interview taken for Rajendra Prasad at 4:30PM
+
+
+
