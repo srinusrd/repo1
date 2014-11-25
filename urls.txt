@@ -5,3 +5,8 @@ https://www.lullabot.com/blog/article/automate-your-life-phing
 SUID files
 
 http://www.softpanorama.org/Tools/Find/finding_suid_and_sguid_files.shtml
+
+
+Proxy load balancer
+
+http://blog.search-computing.net/2010/04/load-balancing-with-apache-a-tutorial-on-mod_proxy_balancer-installation-and-configuration/

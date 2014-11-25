@@ -176,4 +176,30 @@ Dashboard
 Marketshare : Interview taken for Rajendra Prasad at 4:30PM
 
 
+2014-NOV-24
+Dashboard
+
+Marketshare : Review of marketsheet weekly report.
+Domain Renewals : securechild - pending from Admin.
+iselect : Module_rewrite for UAT
+Intelligent investor - upgraded in LIVe and reverted back in case of failure.
+Vasu: Raised RRF for Linux Team
+
+
+
+2014-NOV-25
+Dashboard
+
+Vasu : On Leave.
+
+Marketshare : Review of marketsheet activities
+Domain Renewals : securechild - pending from Admin.
+iselect : Module_rewrite for UAT
+Forager Funds :  Need details for SSL certificate
+Intelligent investor - upgraded in LIVe and reverted back in case of failure.
+Vasu: Forwarded Vasu resignation details to Mohan ramu HR team.
+
+
+
+
 

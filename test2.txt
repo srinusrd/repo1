@@ -102,6 +102,181 @@ One of the pillars of DevOps is culture, and we were pleased to prove what we al
 It’s not development versus operations, it’s dev plus ops. Getting devs and ops folks on the same side is half the battle. Once you've aligned on practices, tools and strategies, and adopted the cultural changes it takes to achieve collaboration, the goals of the business become shared goals, and IT performance wins.
 
 
+Load these Modules:
+
+mod_proxy.so
+mod_proxy_ajp.so
+mod_proxy_balancer.so
+
+
+Note also the "route" setting which must match the names of the "jvmRoutes" in the Tomcat server.xml for each node. This in conjunction with the "stickysession" setting is key for a Tomcat cluster, as this configures the session management. It tells mod_proxy to look for the node's route in the given session cookie to determine which node that session is using. This allows all requests from a given client to go to the node which is holding the session state for the client. The ProxyPass line configures the actual URL from Apache to the load balanced cluster. You may want this to be "/" e.g. "ProxyPass /balancer://testcluster/" In our case we're just configuring the Tomcat /examples application for our test.
+
+
+
+rewrite modules:
+
+<Proxy balancer://testcluster stickysession=JSESSIONID>
+BalancerMember ajp://127.0.0.1:8009 min=10 max=100 route=node1 loadfactor=1
+BalancerMember ajp://127.0.0.1:8019 min=20 max=200 route=node2 loadfactor=1
+</Proxy>
+
+ProxyPass /examples balancer://testcluster/examples
+
+
+Example -2
+
+ ######################
+ # ALFRESCO SHARE PROXY
+ <Proxy balancer://app>
+   BalancerMember ajp://localhost:8010/share route=tomcat1
+   BalancerMember ajp://localhost:8011/share route=tomcat2
+ </Proxy>
+ ProxyRequests Off
+ ProxyPassReverse /share balancer://app
+ ProxyPass /share balancer://app stickysession=JSESSIONID|jsessionid
+ ######################
+
+Example -3
+
+<VirtualHost *:80>
+    ServerName ducklington.org
+    ServerAlias www.ducklington.org
+
+    ErrorLog /srv/www/ducklington.org/logs/error.log 
+    CustomLog /srv/www/ducklington.org/logs/access.log combined
+
+    <Proxy balancer://cluster>
+        BalancerMember http://app1.ducklington.org
+        BalancerMember http://app2.ducklington.org
+        BalancerMember http://app3.ducklington.org
+        BalancerMember http://app4.ducklington.org
+        BalancerMember http://app5.ducklington.org
+    </Proxy>
+
+    ProxyPass / balancer://cluster/
+
+    # ProxyPass / balancer://cluster/ lbmethod=byrequests
+    # ProxyPass / balancer://cluster/ lbmethod=bytraffic
+    # ProxyPass / balancer://cluster/ lbmethod=bybusyness
+</VirtualHost>
+
+
+Example -4 
+
+Proxying a Domain to Lighttpd
+
+We already have a site called “www.firstsite.org” running under Apache as a normal virtual host. We’ll use Apache to send requests for the site “www.secondsite.org” to lighttpd, which we’ve configured to run on port 8080 on localhost. Here’s the configuration file for “www.secondsite.org”:
+
+/etc/apache2/sites-available/www.secondsite.org
+
+   	
+
+    <VirtualHost 74.207.231.112:80>
+         ServerAdmin support@secondsite.org
+         ServerName secondsite.org
+         ServerAlias www.secondsite.org
+
+         ProxyPass / http://localhost:8080/
+
+         # Uncomment the line below if your site uses SSL.
+         #SSLProxyEngine On
+    </VirtualHost>
+
+The ProxyPass directive tells Apache to forward all requests for this domain to a web server running on port 8080. If our target server was running on another VPS (as with a server that only answers on the backend private network), we could just specify that address instead
+
+
+
+
+ProxyPass / balancer://balancer_cluster_name
+
+
+
+Example - 5
+
+
+<Proxy balancer://mycluster>
+    BalancerMember http://192.168.1.50:80
+    BalancerMember http://192.168.1.51:80
+</Proxy>
+ProxyPass /test balancer://mycluster
+ProxyPassReverse /test balancer://mycluster
+
+
+
+Header add Set-Cookie "ROUTEID=.%{BALANCER_WORKER_ROUTE}e; path=/" env=BALANCER_ROUTE_CHANGED
+<Proxy balancer://mycluster>
+    BalancerMember http://192.168.1.50:80 route=1
+    BalancerMember http://192.168.1.51:80 route=2
+    ProxySet stickysession=ROUTEID
+</Proxy>
+ProxyPass /test balancer://mycluster
+ProxyPassReverse /test balancer://mycluster
+
+
+ProxyPass /test balancer://mycluster stickysession=JSESSIONID|jsessionid scolonpathdelim=On
+<Proxy balancer://mycluster>
+    BalancerMember http://192.168.1.50:80 route=node1
+    BalancerMember http://192.168.1.51:80 route=node2
+</Proxy>
+
+
+Sticky sessions
+
+Header add Set-Cookie "BALANCEID=hej.%{BALANCER_WORKER_ROUTE}e; path=/;" env=BALANCER_ROUTE_CHANGED
+
+<Proxy balancer://mycluster>
+    BalancerMember http://tomcat sever1.ip:8080  route=AcZxv
+    BalancerMember http://tomcat server2.ip:8080 route=AcXxv
+    lbmethod=byrequests stickysession=BALANCEID
+</Proxy>
+
+In catalina.properties file
+
+
+tcserver.node=AcZxv (tomcat 1st server)
+tcserver.node=AcXxv (tomcat 2nd server)
+
+
+Restrictions
+
+# limit access to local area network
+<Limit GET POST PUT>
+ order deny,allow
+ deny from all
+ allow from 192.168.0.0/33
+</Limit>
+Secure Directories by IP Address and/or Domain ^
+
+In the following example, all IP addresses are allowed access except for 12.345.67.890 and domain.com:
+
+# allow all except those indicated here
+<Limit GET POST PUT>
+ order allow,deny
+ allow from all
+ deny from 12.345.67.890
+ deny from .*domain\.com.*
+</Limit>
+
+
+
+Conversely, to enable directory browsing, use the following directive:
+
+# enable directory browsing
+Options All +Indexes
+
+Likewise, this rule will prevent the server from listing directory contents:
+
+# prevent folder listing
+IndexIgnore *
+
+And, finally, the IndexIgnore directive may be used to prevent the display of select file types:
+
+# prevent display of select file types
+IndexIgnore *.wmv *.mp4 *.avi *.etc
+
+
+
+
 
 
 
