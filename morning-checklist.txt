@@ -200,6 +200,20 @@ Intelligent investor - upgraded in LIVe and reverted back in case of failure.
 Vasu: Forwarded Vasu resignation details to Mohan ramu HR team.
 
 
+2014-NOV-26
+Dashboard
+
+Vasu : On Leave.
+
+Domain Renewals : securechild - pending from Admin.
+iselect : Module_rewrite for UAT
+Forager Funds :  Need details for SSL certificate
+Intelligent investor - upgraded DEV and given to dev team for testing. working but failed with errors when migrated the IP to this.
+IES: Meeting with srinivas velemala
+IDT : Meeting with LEELA on this.
+
+
+
 
 
 

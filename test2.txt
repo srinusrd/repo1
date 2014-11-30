@@ -276,6 +276,131 @@ IndexIgnore *.wmv *.mp4 *.avi *.etc
 
 
 
+PHP CURL CHECK
+
+<?php
+
+// Script to test if the CURL extension is installed on this server
+
+// Define function to test
+function _is_curl_installed() {
+    if  (in_array  ('curl', get_loaded_extensions())) {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+
+// Ouput text to user based on test
+if (_is_curl_installed()) {
+  echo "cURL is <span style=\"color:blue\">installed</span> on this server";
+} else {
+  echo "cURL is NOT <span style=\"color:red\">installed</span> on this server";
+}
+?>
+
+
+
+Subdomain to application1.
+
+
+
+<VirtualHost *:80>
+        ServerAdmin webmaster@localhost
+        ServerName app1.example.com
+        ProxyRequests Off
+        ProxyPreserveHost On
+
+        <Proxy *:80>
+          Order deny,allow
+          Allow from all
+        </Proxy>
+        ProxyPass / http://localhost:8080/app1
+        ProxyPassReverse / http://localhost:8080/app1
+
+        ProxyHTMLURLMap / /app1/
+
+        <Location />
+                Order allow,deny
+                Allow from all
+        </Location>
+</VirtualHost>
+
+4 - Restart apache2 service:
+
+
+http://app1.example.com/some/beautiful/page
+
+sudo service apache2 restart
+
+
+
+<VirtualHost xxx.xxx.xxx.xxx:80>
+     ServerAdmin email@email.com
+     ServerName staging.domain.com
+
+     ProxyPass /app1 http://localhost:8080/app1
+     ProxyPassReverse /app1 http://localhost:8080/app1
+</VirtualHost>
+
+
+<VirtualHost xxx.xxx.xxx.xxx:80>
+     ServerAdmin email@email.com
+     ServerName staging.domain.com
+
+     ProxyPass /app1 http://localhost:8080/app1
+     ProxyPassReverse /app1 http://localhost:8080/app1
+
+     ProxyPass /app2 http://localhost:8080/app2
+     ProxyPassReverse /app2 http://localhost:8080/app2
+
+     ProxyPass /app3 http://localhost:8080/app3
+     ProxyPassReverse /app3 http://localhost:8080/app3
+</VirtualHost>
+
+
+
+http://www.webmasterworld.com/forum92/6079.htm
+
+
+
+ Apache/mod_proxy (Serving static files)
+
+     <VirtualHost *:80>
+
+       ServerName app.somehost.com
+
+       # Make sure that document root points to public dir of our application
+       DocumentRoot /path/to/public
+
+       # Don't proxy any request beginning with the keyword "/static".
+       # So, for example, "/static/logo.gif" will be served directly by
+       # Apache from the "/path/to/public/static/logo.gif file"
+       # The ! (exclamation mark) keyword in ProxyPass means "don't"
+       ProxyPass /static !
+
+       # Another one for "favicon.ico", so that explorer and mozilla are happy
+       ProxyPass /favicon.ico !
+
+       # And now we send back to our application everyting else that does
+       # not begin with "/static" or "/favicon.ico"
+       ProxyPass / http://localhost:3000/
+       ProxyPassReverse / http://localhost:3000/
+
+     </VirtualHost>
+
+
+ProxyRequests off
+ProxyPass /team !
+ProxyPass  /   http://www.yahoo.com
+ProxyPassReverse  /  http://www.yahoo.com
+
+RewriteEngine on
+   RewriteLog "/var/log/rewrite.log"
+   RewriteLogLevel 9
+
+
 
 
 
