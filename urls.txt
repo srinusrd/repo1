@@ -10,3 +10,121 @@ http://www.softpanorama.org/Tools/Find/finding_suid_and_sguid_files.shtml
 Proxy load balancer
 
 http://blog.search-computing.net/2010/04/load-balancing-with-apache-a-tutorial-on-mod_proxy_balancer-installation-and-configuration/
+
+
+Redirect site for ip or domain to default website
+
+
+RewriteEngine On
+RewriteBase /
+RewriteCond %{HTTP_HOST} !^domain\.com
+RewriteRule (.*) http://domain.com/$1 [R=301,L]
+
+
+Recently we had a WordPress site where that used HTTPS (SSL) on the login/admin areas. But we wanted to discourage HTTPS for non-admin URL. Here are the rewrite rules that ended up using in a .htaccess file:
+
+RewriteEngine On
+RewriteCond %{HTTPS} on
+RewriteCond %{REQUEST_URI} !^\/wp\-admin
+RewriteCond %{REQUEST_URI} !^\/wp\-login.php
+RewriteCond %{REQUEST_URI} !^\/wp\-includes
+RewriteCond %{REQUEST_URI} !^\/wp\-content\/plugins
+RewriteRule (.*) http://%{HTTP_HOST}%{REQUEST_URI} [R,L]
+
+
+For a server using Plesk add the following lines to a .htaccess file to stop execution of PHP scripts in the folder:
+
+RemoveHandler .php .phtml .php3 RemoveType .php .phtml .php3 php_flag engine off
+	
+RemoveHandler .php .phtml .php3
+RemoveType .php .phtml .php3
+php_flag engine off
+
+
+These rules will block access for the offending IP address for 5 minutes upon 10 failed login attempts over a 3 minute duration. These rules have been automatically updated in the custom rules for Liquid Web’s ServerSecure service. For customers without ServerSecure, these rules can be added to their custom modsec rules. To accomplish this, edit your custom modsec user rules and append the file with the rules provided below. For CPanel servers, this file is likely located at /usr/local/apache/conf/
+
+SecAction phase:1,nolog,pass,initcol:ip=%{REMOTE_ADDR},initcol:user=%{REMOTE_ADDR},id:5000134
+
+<Locationmatch "/wp-login.php">
+# Setup brute force detection.
+# React if block flag has been set.
+SecRule user:bf_block "@gt 0" "deny,status:401,log,id:5000135,msg:'ip address blocked for 5 minutes, more than 10 login attempts in 3 minutes.'"
+# Setup Tracking. On a successful login, a 302 redirect is performed, a 200 indicates login failed.
+SecRule RESPONSE_STATUS "^302" "phase:5,t:none,nolog,pass,setvar:ip.bf_counter=0,id:5000136"
+SecRule RESPONSE_STATUS "^200" "phase:5,chain,t:none,nolog,pass,setvar:ip.bf_counter=+1,deprecatevar:ip.bf_counter=1/180,id:5000137"
+SecRule ip:bf_counter "@gt 10" "t:none,setvar:user.bf_block=1,expirevar:user.bf_block=300,setvar:ip.bf_counter=0"
+</locationmatch> 
+
+
+Recently I installed “eScan for Linux Servers” on one of our client’s server. eScan has a great Linux virus scanner. In addition to a command line utility, it provides a web interface. The web interface runs on port 10443 by default. The problem is the client’s server was firewalled and I didn’t want to open a new port just for eScan. So I setup a reverse proxy in Apache on a virtual hosts. It got interesting when I discovered that the web interface was embedding internal urls in to the content so I had to add mod_filter and mod_substitute. Here’s the final config:
+
+
+LoadModule filter_module modules/mod_filter.so
+LoadModule substitute_module modules/mod_substitute.so
+<VirtualHost *:80>
+        ServerName av.acme.com:80
+        UseCanonicalName on
+        SSLProxyEngine on
+        ProxyPass / https://localhost:10443/
+        ProxyPassReverse / https://localhost:10443/
+        ErrorLog logs/av.acme.com-error_log
+        CustomLog logs/av.acme.com-access_log common
+        ProxyPreserveHost on
+ 
+        # declare that content should be filtered through mod_substitute
+        FilterDeclare NOLH
+        FilterProvider NOLH SUBSTITUTE resp=Content-Type $text/html
+        FilterChain +NOLH
+ 
+        # replace local urls with remote
+        Substitute "s|https://127.0.0.1:10443|http://av.acme.com|in"
+ 
+        <Location / >
+                AuthType Basic
+                AuthName "Restricted Files"
+                AuthUserFile /etc/httpd/conf.d/av.passwd
+                Require user admin
+        </Location>
+</VirtualHost>
+
+
+
+
+If you don’t need xmlrpc.php or Pinkbacks then we recommend that you block xmlrpc.php in your .htaccess file by adding code like this:
+
+
+# protect xmlrpc <Files xmlrpc.php> Order Deny,Allow Deny from all </Files>
+	
+# protect xmlrpc
+<Files xmlrpc.php>
+   Order Deny,Allow
+   Deny from all
+</Files>
+
+Or you could rename or remove the xmlrpc.php file.
+
+
+
+On Apache web servers, each virtual host has a “ServerName” directive and zero or more “ServerAlias” directives. When converting to Nginx there is only one directive – “server_name” which takes the place of both of the Apache directives. The “server_name” directive takes a set of space delimited arguments listing domains that should match the virtual host. So for example if you have this Apache config:
+
+ServerName acme.com ServerAlias www.acme.com ServerAlias acmeinc.com www.acmeinc.com
+	
+ServerName acme.com
+ServerAlias www.acme.com
+ServerAlias acmeinc.com www.acmeinc.com
+
+Then for Nginx use:
+
+server_name acme.com www.acme.com acmeinc.com www.acmeinc.com
+	
+server_name acme.com www.acme.com acmeinc.com www.acmeinc.com
+
+This is a simple example for full details see this page in the Nginx documentation:
+
+http://nginx.org/en/docs/http/server_names.html
+
+
+
+
+
+
