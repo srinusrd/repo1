@@ -1,0 +1,4 @@
+for h in $(seq $(history | tail -1 | awk '{print $1-N}')  $(history | tail -1 | awk '{print $1}') | tac); do history -d $h; done; history -d $(history | tail -1 | awk '{print $1}')
+
+
+## Replace N with number of lines to delete
