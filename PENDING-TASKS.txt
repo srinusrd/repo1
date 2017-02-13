@@ -1,12 +1,1 @@
-Task 1 : Rewrite rules in Intelligent Investor
-Task 2:  Shift Roster for December 2014 (Night Shift users list.done.)
-Task 3:  Midterm appraisal December 2014 including team.
-Task 4:  Issue with Aws php in Amazon. : Ticket#1058389 — Re: Upgrading to php 5.3 to 5.5 
-Task 5:  Monthly reports for November.done.
-Task 6:  Investigation report to be sent to Daniel  RCA report for the incident : Ticket#1060208 — LIVE MySQL space limit.done. 
-Task 7: Weekly report and Shift roster for marketshare.done.
-Task 8: Domains renewals pending in december-2014.done.
-Task 9: Ticket#1057981] Nagios bandwith monitor
-Task 10: Ticket#1059374 — issue with http monitors :  Age: 2 d 13 h – Created: 11/27/2014 22:19
-Task 11: Downtime to provide the hostname in web server DB settings . (Ticket#1060271 — LIVE MySQL space limit : Age: 21 h 40 m – Created: 11/29/2014 14:01)
-Task 12: MCSAATCHI ftp.done.
+#list of pending tasks
