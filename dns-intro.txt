@@ -1,0 +1,59 @@
+What is DNS?
+
+First, a little background. DNS stands for ‘Domain name system’ and is the protocol whereby a user friendly domain name, such as ‘torchbox.com’ is transferred to the IP address of a server which is hosting the site. The IP address is the unique numerical address for a particular computer on the internet. Think of it like the coordinates of a location on a map.
+
+Domain names need to be unique, otherwise, the whole system would… fall over! It would be like looking up Oxford on a map and finding it was located in two different places. So this is why your domain needs to be registered. A registrar is the company that handles this for you, such as 123-Reg or Gandi. These companies are acting according to the rules of ICANN - the body that enforces unique domain names across the internet. Each registered domain is stored in the registry for the top level domain (TLD) it's registered under, e.g. 'torchbox.com' is registered with Verisign, the registry for all domains ending in '.com’.
+
+Specific computers handle requests for particular domains - these are called the domain name servers (often referred to as DNS servers or just name servers). The name servers that are allocated to handle a particular domain are known as the authoritative servers for that particular domain. Collectively, name servers act a bit like a road map, telling your computer where it should go to retrieve a particular web page. The piece of information that holds that critical domain name to IP address mapping is known as the DNS record.
+
+Maps, coordinates, roads, and records: it’s all simple so far, right?
+Looking up the address in the DNS 'road map’
+
+Let’s look in more detail at what happens when you visit a particular address in your browser, such as http://www.torchbox.com. The first thing that will happen is that your browser will make a request to a particular domain, which is it’s way of simply asking for information. This will typically go through to a name server at your Internet Service Provider (ISP). This server will then check if it manages the domain you’ve requested itself (this is unlikely), and if it doesn’t, it will send the request off to other name servers within the DNS system. It will continue contacting other name servers until it either:
+
+a) finds a name server that is authoritative for that domain; or
+
+b) finds a cached record on another name server for that domain (I’ll touch on this shortly)
+
+In either case, the IP address of the server where the site is hosted is returned back to your computer (directly from the authoritative server or from a cached record). Your computer can then contact the server with that IP address to fetch a web page to display in the browser.
+
+So there’s a whole system in place to deal with your one request to find a web page.
+The DNS hierarchy
+
+The process that deals with sending out requests to other name servers isn’t random. Given a look up for ‘www.torchbox.com’, the request will first ask the root servers for the address of the ‘com’ name servers. It then asks the ‘com’ name servers for the address of the ‘torchbox.com’ name servers. Finally it asks the torchbox.com name servers for the IP address of ‘www.torchbox.com’. Each step gets cached along the way.
+Caching of DNS records
+
+You’ll recall that I mentioned that rather than contacting the authoritative name server directly, your request for a particular domain might end at a cached DNS record on a different name server. This is interesting because it gets at the nub of how thousands of interconnected name servers efficiently process requests.
+
+When the authoritative server for a domain sends out the DNS record, the name server that requested it will store that information for a period of time, ranging from a few seconds to a few days. When another name server looking for a record for that domain asks the name server with the cached record, it will use that rather than going on to the authoritative name server. In turn it too will cache the record, so that gradually more and more name servers will hold a record of the map between domain name and IP address. You may hear this referred to as DNS propagation.
+
+The length of time a name server will cache a record for is known as the time to live (or TTL). This can often be configured with your registrar, and is important to know about when you are transferring your domain to a new IP address - more on that below.
+Hosting
+
+The name server doesn’t host your web site, a different server does this. In some cases you may use the same company that you registered your domain name with to host your site, but often it will be hosted with another company. Hosting is just a fancy word for storing the code for your website - code that the browser on your own computer can fetch and render into web pages. Your computer contacts the host server directly once it has retrieved the correct IP address for a domain from a name server.
+Your DNS record
+
+The information about where your site is hosted is stored in a file known as a zone file or in a database. Usually, your registrar will provide a web form for you to update the information required. There are a number of different records in the zone file relating to different aspects of your domain, such as web and email hosting.
+
+    A record - Historically this is the primary record for your domain - it maps your domain name to an IPv4 address (an IP address in the form of four 3 digit numbers such as 192.168.3.1)
+    AAAA record - the primary mapping to an IPv6 address (an IP address stored as 8 groups of 4 hexadecimal digits such as 2001:0db8:85a3:0000:0000:8a2e:0370:7334). IPv6 is the new standard for IP addresses.
+    CNAME - this is not essential but is used to set up an alias for your domain that repoints to your primary domain. For example, you might want everyone coming to ‘www.torchbox.com’ to be pointed to the same server as ‘torchbox.com’, or anyone coming to bbc.com to be pointed to the same server as www.bbc.co.uk.
+    MX Record - this should be used to direct incoming mail to your domain. If you are setting a new website up on an existing domain already used for handling mail, it’s important not to change where this record is pointing.
+    SOA (start of authority) - The zone file also contains the information about the authoritative name servers for your domain. You’ll only need to update this if you want to change your registrar or configure your own name server for your domain.
+
+What happens to your domain when you create a new website
+New domains
+
+If your domain is brand new and is not pointing to an existing site, you can set up your DNS record with your domain registrar in advance. You can password-protect new content to prevent any visitors (or search bots) from seeing the new site before it is complete. In this situation you don’t need to worry about the time it takes for your DNS record to propagate through all the name servers which might want to cache it, as you can make sure this is done in plenty of time in advance of launch.
+Transferring existing domains and lowering the TTL
+
+A very common situation for our clients is that they are replacing an existing website with a new one. The existing DNS record needs to be updated to point to a new IP address. Unless you happen to be hosting your new site on exactly the same server, you’ll need to update your DNS record to point to the new IP address.
+
+You’ll only want to do this once you’re ready to launch, so what can you do about all those name servers who have cached your DNS record for the old IP address? The answer is to lower your TTL down to a few seconds for your domain - well in advance of your launch date (or at least further in advance than your existing TTL). It is important to set the TTL as low as your registrar allows. This way name servers are only allowed to cache your record for a few seconds before they must start asking around for the authoritative server again to check their cached record really is correct. Your DNS propagation will happen in a matter of seconds rather than taking a few days.
+Proxying requests
+
+Another option when transferring a domain to a new server is to set up a reverse proxy on your new web server. This sounds fancy but it is just a means of updating your DNS record to point to the new IP address before you launch.
+
+Some special configuration is set up on the new web server to redirect any requests coming through for your domain name back to the old IP address - effectively the current website is served up via the new server. This means the process of launching the site is very smooth indeed - all that needs to be done at launch is for the configuration on the new server to be updated. Propagation of the new DNS record has already happened so visitors will see the new site instantly.
+
+Note: an alternative process to reverse proxying is that after launch you could configure your old server forward requests to the new server.
