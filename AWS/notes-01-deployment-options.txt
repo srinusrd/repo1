@@ -10,3 +10,12 @@ opsworks is the middle tier. operating as a full featured orchestration tool (th
 cloudformation is the nuts and bolts, low level utility. when you want granular control over everything in your environment, cfn is the choice. cfn can handle pretty much anything - from tiny footprint, one instance web server deployments to netflix - with a templatized, code driven approach. if you're doing serious work with aws, you're probably using cloudformation.
 
 it's worth noting that these services can be combined. a useful set up would be to use cfn to establish the networking topology of your aws presence and opsworks to handle specific application deployment processes within the created network space.
+
+
+Elastic Beanstalk is useful in cases where your developers don’t have an idea as to how to set-up the required environment on AWS (VPC, ELB, RDS etc) and just want to deploy their app and test. Beanstalk sets up the entire environment for you in the backend and gives you the application endpoint
+
+OpsWork is primarily for scenarios where you have multiple stacks (Application Layer, Database Layer, Web Layer) and each stack would require to be customized - For instance choosing specific version of Tomcat or your MySQL Database. (BeanStalk doesn’t let you customize)
+
+OpsWork is the right fit when you have a large number of servers and you want to configure and manage them in an easier way. BeanStalk is suited when you just want to launch small number of servers just to test the functionality of your application etc
+
+

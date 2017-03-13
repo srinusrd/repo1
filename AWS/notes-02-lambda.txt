@@ -1,0 +1,40 @@
+General Lambda use cases
+
+Operating serverless websites
+-----------------------------
+
+This is one of the killer use cases to take advantage of the pricing model of Lambda, and S3 hosted static websites. Consider hosting the web frontend on S3, and accelerating content delivery with Cloudfront caching. The web frontend can send requests to Lambda functions via API Gateway HTTPS endpoints. Lambda can handle the application logic, and persist data to a fully managed database service (RDS for relational, or DynamoDB for non relational database). You can host your Lambda functions and databases within a VPC to isolate them from other networks. As for Lambda, API Gateway and S3, you pay only after the traffic incurred, the only fixed cost will be running the database service.
+
+Log analysis on the fly
+------------------------
+You can easily build a Lambda function to check log files from Cloudtrail or Cloudwatch. Lambda can search in the logs looking for specific events or log entries as they occur and send out notifications via SNS. You can also easily implement custom notification hooks to Slack, Zendesk, or other systems by calling their API endpoint within Lambda.
+
+Automated backups and everyday tasks
+------------------------------------
+
+Scheduled Lambda events are great for housekeeping within the AWS accounts. Creating backups, checking for idle resources, generating reports and other tasks which frequently occur can be implemented in no time using the boto3 Python libraries.
+Processing uploaded S3 objects
+
+By using S3 object event notifications, you can immediately start processing your files by Lambda, once they land in S3 buckets. Image thumbnail generation by Lambda is a great example for this use case, so the solution will be cost effective and you don’t need to worry about scaling up - Lambda will handle any load!
+Filtering and transforming data on the fly
+
+Because Lambda is highly scalable, it is great for transitioning data between S3, Redshift, Kinesis and database services, and filtering on the fly. You can easily place Lambda in between services to transform and load data as required.
+Limitations
+
+Lambda comes with a number of “limitations”, which is good to keep in mind when architecting a solution.
+
+There are some “hard limitations” for the runtime environment: the disk space is limited to 512 MB, memory can vary from 128 to 1536 MB and the execution timeout for a function is maximised in 5 minutes. Package constraints like size of deployment package and number of file descriptors are also defined as hard limits.
+
+Similarly, there are “limitations” for the requests served by Lambda: request and response body payload size is maximised in 6 MB while event request body can be 128 KB. At the moment, the only soft “limitation”, which you can request to be increased, is the number of concurrent executions, which is a safety feature to prevent any accidental recursive or infinite loops go wild in the code. This would throttle the number of parallel executions.
+
+You may be wondering why I keep quoting the word “limitation” - because really these are not limitations, but well defined architectural principles for the Lambda service:
+
+If your Lambda function would be running for hours, it should rather go to Beanstalk or EC2 than Lambda.
+
+If the deployment package jar is larger than 50 MB, it should be broken down to multiple packages and functions.
+
+If the requests payloads exceeds the limits, you should break them up into multiple request endpoints.
+
+It all comes down to prevent deploying monolithic applications as Lambda functions, and serve stateless microservices as a collection of functions instead. Having this mindset, the “limitations” make complete sense.
+
+Lambda is one of the versatile tools in the AWS ecosystem and can be used for many use cases. However, as controlling a powerful highly scalable service, things can go horribly wrong if functions not implemented well, so always make sure you have architected and tested thoroughly before publishing your functions live.
