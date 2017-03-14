@@ -32,3 +32,12 @@ Managers just don't go out and haphazardly perform their responsibilities. Good 
 
 
 
+
+    What is important to the success of this process?
+    For each of the items that are important, why are they important?
+    For each reason they are important, what is the risk of failure?
+    For each of the risks items, how can they be minimized or eliminated?
+    For each way the risk items can be minimized or eliminated, which are under your control?
+    For each one under your control, what can you to to implement the risk mitigation process?
+
+
