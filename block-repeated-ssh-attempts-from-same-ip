@@ -1,0 +1,10 @@
+Blocking ssh attempts can also be done by using iptables. You don't need to use exotic ports in this way.
+
+The following lines create a rule that drops ssh login attempts from the same IP address after 3 failures and add a 5 minute barrier.
+
+iptables -N SSHSCAN
+iptables -A INPUT -p tcp --dport 22 -s 192.168.1.2 -j ACCEPT
+iptables -A INPUT -p tcp --dport 22 -m state --state NEW -j SSHSCAN
+iptables -A SSHSCAN -m recent --set --name SSH
+iptables -A SSHSCAN -m recent --update --seconds 300 --hitcount 3 --name SSH -j LOG --log-level info --log-prefix "SSH SCAN blocked: "
+iptables -A SSHSCAN -m recent --update --seconds 300 --hitcount 3 --name SSH -j DROP
