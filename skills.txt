@@ -112,3 +112,22 @@ The Third Way has been achieved. There is a culture of experimentation and learn
     The team employees a statistician.
     Decisions supported by modeling "what if" scenarios using extracted actuals data
     ACHIEVEMENT UNLOCKED: THE THIRD WAY 
+
+
+
+
+========================================================================================================================
+
+
+	analyze system logs
+        introduce and integrate new technologies
+	perform routine audits of systems and software
+        perform backups
+        install and configure new hardware and software 
+        add/remove/update user account information 
+        responsible for security
+ 	document the configuration of the system 
+        fine-tune system performance
+        ensure network infrastructure is up and runnning
+
+
