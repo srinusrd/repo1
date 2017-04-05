@@ -40,4 +40,75 @@ Managers just don't go out and haphazardly perform their responsibilities. Good 
     For each way the risk items can be minimized or eliminated, which are under your control?
     For each one under your control, what can you to to implement the risk mitigation process?
 
+============================================================================================================
 
+
+The Look-For's
+Milestone 1 (No Way) Look-For's
+
+At this stage you haven't gotten started. You may or may not be doing ok, you don't know because nothing is documented, automated or measured.
+
+    Results are inconsistent.
+    Different people execute processes differently.
+    Processes aren't documented.
+    The team can't enumerate all the processes a team does (even at a high level).
+    IT department responsible for "everything with an electric plug" and, therefore, unable to do anything.
+    Requests get lost or stalled indefinitely
+    Unable to predict how long common tasks take to complete.
+    Little or no measurement or metrics.
+    No dashboards.
+    You think customers are happy but they aren't.
+    Operational problems, if reported, don't get attention.
+    It is common (and rewarded) to enact optimizations that benefit a person or small group to the detriment of the larger organization or system.
+    Departmental goals emphasize departmental performance at the detriment of organizational performance. 
+
+Milestone 2 (Way 1a) Look-For's
+The end-to-end process is documented and repeatable by more than one person. There are few ad hoc steps (if any exist, they are identified). The system produces relatively consistent results.
+
+    End-to-end process has each step enumerated, with dependencies.
+    End-to-end process has each step's process documented.
+    Different people doing the tasks the same way.
+    Sadly, there is some duplication of effort seen in the flow.
+    Sadly, some information needed by multiple tasks may be re-created by each step that needs it. 
+
+Milestone 3 (Way 1b) Look-For's
+The First Way has been achieved. The flow is one direction: left to right (i.e. work doesn't need to go back to be re-done or fixed). Defects are not passed down the line. Process changes are no longer process surprises. We may not be achieving our objectives but at least they are defined. For example we now know we want to have all new service requests done in 48 hours but we may or may not be measuring completion time to know whether or not we are hitting that objective.
+
+    Each step has QA checklist before handing off to next step.
+    There is a process by which all learn of changes to others' processes (Ex: Ops attends Dev standups; Dev attends Ops meetings.)
+    Information needed by multiple steps is created once.
+    No (or minimal) duplication of effort.
+    Ability to turn-up capacity of flow repeatably.
+    ACHIEVEMENT UNLOCKED: THE FIRST WAY 
+
+Milestone 4 (Way 2) Look-For's
+The Second Way has been achieved. Feedback flows upstream so that the process can be improved and surprises are reduced. Problems are amplified rather than hidden. For each step we measure wait time, task duration, number of defects, and any rework.
+
+    There are feedback mechanisms for all steps.
+    Oncall pain shared by the people most able to fix problems.
+    Dashboards exist showing each step's completion time; lag time of each step.
+    Dashboards exist showing current bottleneck, backlog, idle steps.
+    Dashboards show defect and rework counts.
+    Periodic (weekly?) review of defects and reworks.
+    Postmortems published for all to see, draft within X hours, final within X days.
+    Periodic review of alerts by affected team. Periodic review of alerts by cross-functional team.
+    Process change requests require data to measure problem being fixed.
+    Dashboards report data in business terms (i.e. not just technical terms).
+    Every "fail-over procedure" has a "date of last use" dashboard.
+    Capacity needs predicted ahead of need.
+    ACHIEVEMENT UNLOCKED: THE SECOND WAY 
+
+Milestone 5 (Way 3) Look-For's
+The Third Way has been achieved. There is a culture of experimentation and learning. The team spends more time on innovation than fighting fires. Operations are driven by science, not folklore or guesswork.
+
+    After process changes are made, before/after data compared to determine success.
+    Process changes are reverted if before/after data shows no improvement.
+    Process changes that have been acted on come from a variety of sources.
+    At least one process change has come from every step (in recent history).
+    Cycle time enjoys month-over-month improvements.
+    Mechanisms exist so that any fail-over procedure not utilized in recent history is activated artificially.
+    Stress-testing and failover testing done periodicly (quarterly or monthly).
+    "Game Day" exercises (intensive, system-wide tests) done periodicly (at least yearly).
+    The team employees a statistician.
+    Decisions supported by modeling "what if" scenarios using extracted actuals data
+    ACHIEVEMENT UNLOCKED: THE THIRD WAY 
