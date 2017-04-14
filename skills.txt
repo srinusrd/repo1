@@ -130,4 +130,39 @@ The Third Way has been achieved. There is a culture of experimentation and learn
         fine-tune system performance
         ensure network infrastructure is up and runnning
 
+==========================================================================================================================
+
+Careful planning
+Not trying to be too clever
+Contingency plans in case of issues
+
+
+1: You need the ability to learn and adapt because the real world is nothing like school. New tech is always coming out and you need to be able to adapt.
+
+2: You need to know how to program/script. Because working smarter and not harder is the only way to stay ahead of all the work.
+
+3: People skills again. "Plays well with others" is always a good thing.
+
+4: Backup. Have a disaster recovery plan and test it 2-4 times per year. Recover a file from your backups at least once per month if not once per week.
+
+5: Never do more than 1 change at a time if feasible. It makes it hard to troubleshoot.
+
+============================================================================================================================
+
+Level-1
+
+Create accounts
+Reset passwords
+manage mail accounts
+
+Level-2
+
+Setup the Active Directory (AD), DHCP, and DNS servers.
+
+Level-3
+
+Scripting Skills - Knowing how to use VBScript, PowerShell
+
+============================================================================================================================
+
 
