@@ -165,4 +165,42 @@ Scripting Skills - Knowing how to use VBScript, PowerShell
 
 ============================================================================================================================
 
+Linux advanced skills
+
+RESPONSIBILITIES:
+
+    Design, implement, and maintain all aspects of Linux-based servers and desktops, including:
+        Open-source applications on Linux such as Apache, BIND, HAProxy, NGINX, sendmail/postfix, etc
+        Source code and version control tools such as Subversion and Bitbucket/Git
+        Workflow and issue management tools such as JIRA, Trac, and RT
+        Build management and continuous integration tools such as Bamboo and Jenkins
+        Code reporting and review tools such as FishEye and Crucible
+        Databases such as Postgres, MySQL, and MongoDB
+        High performance compute clusters and workload scheduling software and systems.
+        Engineering tool license management and reporting tools
+        Engineering collaboration tools such as Confluence, HipChat, and Read the Docs
+        Logging, indexing, and search tools such as the ELK stack
+    Define requirements, perform research, evaluate vendors/solutions, design/implement solutions, and provide ongoing support for all technologies in scope. Provide simple but effective scalability, performance, and reliability.
+    Drive consistent standardized solutions across SpaceX for all software, configurations, and processes.
+    Implement tools and processes for efficient and effective operational management of the environment -- change management, monitoring, alerting, incident handling, customer request handling, etc.
+    Define, manage, and execute on a roadmap of projects that continues to raise the bar through implementing innovative technology, tools, automation, and processes.
+    Interact with internal customers to provide solutions and resolve problems in a timely and proactive manner. Serve as a primary liaison from IT to certain customers.
+
+
+BASIC QUALIFICATIONS:
+
+    Bachelor¿s degree in computer science or a computer engineering field, or at least 4 years of experience as an IT Engineer with experience managing a team of IT Engineers.
+    Experience with Linux servers in physical and virtualized environments
+    Powerful Linux shell skills (bash scripting, output parsing, etc)
+    Expertise in Python or other scripting and automation languages
+    Experience with configuration management (Puppet, Chef, Ansible), provisioning, infrastructure as code, and other DevOps concepts and tools (Vagrant, Docker, etc)
+    Experience with both client and server hardware/software, management tools, storage technologies, enterprise networking, virtualization, and security technologies.
+
+
+PREFERRED SKILLS AND EXPERIENCE:
+
+    A strong desire to automate everything!
+    Ability to clearly communicate and convey highly technical ideas in terms non-geeks can understand.
+    A motivated self-starting personality, able to work independently while maintaining patience with constant interruptions and multiple requests.
+    Comfortable working with mission critical and sensitive systems, with a sense of urgency appropriate to the responsibilities.
 
