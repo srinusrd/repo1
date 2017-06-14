@@ -1,5 +1,3 @@
-June-14-2017
-
 JENKINS websites
 
 https://www.lullabot.com/blog/article/automate-your-life-phing
