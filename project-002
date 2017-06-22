@@ -1,0 +1,30 @@
+Conducting Daily Team Meetings: As the name implies, this activity involves having a project huddle in which team members give a status update of their tasks. Daily team meetings also involve identifying dependencies and risks to the assigned tasks. Capturing meeting notes is critical to ensuring next steps and key decision are taken. You can also use this platform to determine team conflicts, gauge team motivation, and identify the slackers.
+
+
+Conducting Project Health Meetings: These meetings involve the larger team since many projects are broken into subprojects, intra-project dependencies are analyzed. Various factors are used to access the project health. For example, you can use earned value analysis, team motivation, and client satisfaction.
+
+
+Conducting Retrospectives: These meetings are generally held after a release or after project completion. Strictly speaking, retrospectives are not a project controlling technique. However, their value in controlling a project is critical to ensuring continuous learning throughout the project. Therefore, I recommend conducting retrospectives during the release and not leaving it till the end. The lessons learned can then be implemented proactively while delivering the release.
+
+Using Earned Value Analysis
+
+Project control techniques that pertain to measurement of project performance include earned value analysis. Earned value analysis is a technique that enables you to quantify project progress. Earned value analysis has some key indices, such as Cost Performance Index (CPI) and Schedule Performance Index (SPI). For example, if the values of CPI and SPI in your project are under one, this indicates the project is over-budget and will come in late. You can then take action to get the project back on track. Therefore, it is critical for you to keep an eye on the earned value indices. Similarly, you can use project cost and schedule variance.
+
+
+Using Critical Path Analysis
+
+Every project has a critical path. If any activity on the critical path is delayed, the project completion date is directly impacted. Therefore, monitoring and controlling activities on the critical path is more important than doing so with other activities. The project control techniques you employ must always include the activities on the critical path.
+
+
+
+Elements of project Control and Prerequisites of control system.
+The following matters included in the project control system.
+
+    To evaluate progress report of the project. 
+        To check whether or not the project is going on according to the objective. 
+	    Whether or not the project is being operated according to the objective. 
+	        To determine which works are being completed and which have remained to be completed. 
+		    What corrective steps are necessary to achieve the objective. 
+
+
+
