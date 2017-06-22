@@ -1,0 +1,2 @@
+Nagios uptime reports
+Device monitoring with snmp
