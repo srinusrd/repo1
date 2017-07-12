@@ -1,0 +1,22 @@
+3- Tell Postfix to process the queue now
+
+postqueue -f
+
+OR
+
+postfix flush
+
+This will cause Postfix to immediately attempt to send all queued messages.
+
+4- Delete queued mail
+
+Delete all queued mail
+
+postsuper -d ALL
+
+Delete only the differed mail queue messages (i.e. only the ones the system intends to retry later)
+
+postsuper -d ALL deferred
+
+
+egrep 'qmgr.*(panic|fatal|error|warning):' /var/log/maillog

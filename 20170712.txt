@@ -1,4 +1,6 @@
 OTRS account to Mohit
-verification of mails ststaus on Nagios server
+verification of mails status on Nagios server
 
+20285439 mails in queue
 
+ Deleted: 204636 messages
