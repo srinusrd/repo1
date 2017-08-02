@@ -1,0 +1,1 @@
+ ansible all -m shell -a 'chkconfig --list; netstat -apt | grep LISTEN| grep -v LISTENING; ps -ef' --ask-pass
