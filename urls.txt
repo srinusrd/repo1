@@ -51,7 +51,7 @@ RemoveType .php .phtml .php3
 php_flag engine off
 
 
-These rules will block access for the offending IP address for 5 minutes upon 10 failed login attempts over a 3 minute duration. These rules have been automatically updated in the custom rules for Liquid Webís ServerSecure service. For customers without ServerSecure, these rules can be added to their custom modsec rules. To accomplish this, edit your custom modsec user rules and append the file with the rules provided below. For CPanel servers, this file is likely located at /usr/local/apache/conf/
+These rules will block access for the offending IP address for 5 minutes upon 10 failed login attempts over a 3 minute duration. These rules have been automatically updated in the custom rules for Liquid Web‚Äôs ServerSecure service. For customers without ServerSecure, these rules can be added to their custom modsec rules. To accomplish this, edit your custom modsec user rules and append the file with the rules provided below. For CPanel servers, this file is likely located at /usr/local/apache/conf/
 
 SecAction phase:1,nolog,pass,initcol:ip=%{REMOTE_ADDR},initcol:user=%{REMOTE_ADDR},id:5000134
 
@@ -66,7 +66,7 @@ SecRule ip:bf_counter "@gt 10" "t:none,setvar:user.bf_block=1,expirevar:user.bf_
 </locationmatch> 
 
 
-Recently I installed ìeScan for Linux Serversî on one of our clientís server. eScan has a great Linux virus scanner. In addition to a command line utility, it provides a web interface. The web interface runs on port 10443 by default. The problem is the clientís server was firewalled and I didnít want to open a new port just for eScan. So I setup a reverse proxy in Apache on a virtual hosts. It got interesting when I discovered that the web interface was embedding internal urls in to the content so I had to add mod_filter and mod_substitute. Hereís the final config:
+Recently I installed ‚ÄúeScan for Linux Servers‚Äù on one of our client‚Äôs server. eScan has a great Linux virus scanner. In addition to a command line utility, it provides a web interface. The web interface runs on port 10443 by default. The problem is the client‚Äôs server was firewalled and I didn‚Äôt want to open a new port just for eScan. So I setup a reverse proxy in Apache on a virtual hosts. It got interesting when I discovered that the web interface was embedding internal urls in to the content so I had to add mod_filter and mod_substitute. Here‚Äôs the final config:
 
 
 LoadModule filter_module modules/mod_filter.so
@@ -100,7 +100,7 @@ LoadModule substitute_module modules/mod_substitute.so
 
 
 
-If you donít need xmlrpc.php or Pinkbacks then we recommend that you block xmlrpc.php in your .htaccess file by adding code like this:
+If you don‚Äôt need xmlrpc.php or Pinkbacks then we recommend that you block xmlrpc.php in your .htaccess file by adding code like this:
 
 
 # protect xmlrpc <Files xmlrpc.php> Order Deny,Allow Deny from all </Files>
@@ -115,7 +115,7 @@ Or you could rename or remove the xmlrpc.php file.
 
 
 
-On Apache web servers, each virtual host has a ìServerNameî directive and zero or more ìServerAliasî directives. When converting to Nginx there is only one directive ñ ìserver_nameî which takes the place of both of the Apache directives. The ìserver_nameî directive takes a set of space delimited arguments listing domains that should match the virtual host. So for example if you have this Apache config:
+On Apache web servers, each virtual host has a ‚ÄúServerName‚Äù directive and zero or more ‚ÄúServerAlias‚Äù directives. When converting to Nginx there is only one directive ‚Äì ‚Äúserver_name‚Äù which takes the place of both of the Apache directives. The ‚Äúserver_name‚Äù directive takes a set of space delimited arguments listing domains that should match the virtual host. So for example if you have this Apache config:
 
 ServerName acme.com ServerAlias www.acme.com ServerAlias acmeinc.com www.acmeinc.com
 	
@@ -132,6 +132,9 @@ server_name acme.com www.acme.com acmeinc.com www.acmeinc.com
 This is a simple example for full details see this page in the Nginx documentation:
 
 http://nginx.org/en/docs/http/server_names.html
+
+
+https://arkit.co.in/pnp4nagios-installation-configuration/
 
 
 
