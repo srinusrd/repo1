@@ -10,11 +10,11 @@
 
 2) Organizes. The manager divides the work into manageable activities, and selects people to accomplish the tasks that need to be done.
 
-3) Motivates and communicates. The manager creates a team out of his people, through decisions on pay, placement, promotion, and through his communications with the team. Drucker also referred to this as the ìintegratingî function of the manager.
+3) Motivates and communicates. The manager creates a team out of his people, through decisions on pay, placement, promotion, and through his communications with the team. Drucker also referred to this as the ‚Äúintegrating‚Äù function of the manager.
 
 4) Measures. The manager establishes appropriate targets and yardsticks, and analyzes, appraises and interprets performance.
 
-5) Develops people. With the rise of the knowledge worker, this task has taken on added importance. In a knowledge economy, people are the companyís most important asset, and it is up to the manager to develop that asset.
+5) Develops people. With the rise of the knowledge worker, this task has taken on added importance. In a knowledge economy, people are the company‚Äôs most important asset, and it is up to the manager to develop that asset.
 
 
  Functions of Managers
@@ -189,7 +189,7 @@ RESPONSIBILITIES:
 
 BASIC QUALIFICATIONS:
 
-    Bachelorøs degree in computer science or a computer engineering field, or at least 4 years of experience as an IT Engineer with experience managing a team of IT Engineers.
+    Bachelor¬øs degree in computer science or a computer engineering field, or at least 4 years of experience as an IT Engineer with experience managing a team of IT Engineers.
     Experience with Linux servers in physical and virtualized environments
     Powerful Linux shell skills (bash scripting, output parsing, etc)
     Expertise in Python or other scripting and automation languages
@@ -203,4 +203,85 @@ PREFERRED SKILLS AND EXPERIENCE:
     Ability to clearly communicate and convey highly technical ideas in terms non-geeks can understand.
     A motivated self-starting personality, able to work independently while maintaining patience with constant interruptions and multiple requests.
     Comfortable working with mission critical and sensitive systems, with a sense of urgency appropriate to the responsibilities.
+    
+    
+    BASIC SKILLS:
+    
+    Part-1
+    
+    Create and update repositories. At the same time you must be able to install packages, remove or search them.
+    Setting permissions on files and directories. You need to be good with special permissions such as SGID,SUID and sticky bits. Gain knowledge about ACLs.
+    Process management. This is something practically required in company environment. Learn basic process management commands such as top, ps, vmstat etc.
+    Managing and creating partitions. You must be good with file systems. Also gain knowledge about type of partitions such as swap.
+    Sharing of files through NFS and SAMBA.
+    Understanding of SElinux concepts. Understand how contexts work in SELinux .
+    Learn SSH.
+    Learn networking basics and understanding of firewalls would be great.
+    Cron scheduling basics.
+    Basic understanding of configuration files of various services.
+    Basic shell scripting.
+    
+    Part-2
+    
+        Installation of Linux OS ( All Major Linux Distribution) and update OS without losing data.
+    set repository and Install packages and update to it‚Äôs stable version.
+    Create, Delete and modify user and groups
+    Must be comfortable with CLI, and perform major task using CLI.
+    Manage file system permissions for users and groups and apply system policy.
+    Must be aware from all system configuration file and keep backup of it.
+    File sharing for windows and Linux ( samba, NFS )
+    should be able to work remotely without GUI and understating of SSH.
+    Must keep back up of important data.
+    Manage networks and printers
+    Must have good knowledge of shell scripts, without shell scripting you can‚Äôt be good system admin.
+    keep record of changes and able to solve problem quickly.
+    
+    
+    Part-3
+    
+    Basic Configuration
+
+Network Diagnostics
+
+System Diagnostics
+
+File System Management
+
+Package Management
+
+Text Manipulation
+
+Troubleshooting Web Servers and Http Issues
+
+working on DNS Servers and Domain Names
+
+Working on SMTP Servers and Troubleshooting Email Issues
+
+
+Part-4
+
+    Basic commands (listing, cat, removing files/dir, nano, vi editor, more, tail etc )
+    LVM
+    User Authentication (user add, remove, lock, unlock, home dir, ssh access)
+    Group Administration (group add, remove, sudo group)
+    Using SSh, Disabling root for ssh access & using sudo
+    Installing programs using rpm & yum (configuring yum)
+    Configuring a network (basics)
+    Types of process & Managing process (basics)
+    Kill signals
+    Backup and restore
+    Types of Run levels
+    NFS, Samba, NIS (basics)
+    Cron and At Jobs
+    FTP & using filezilla (easy)
+    Booting process
+    Kernel Parmeters (basics)
+    Top, Nice values
+    Services
+    Scripting (very basic)
+    
+    Part-5
+    
+    
+    
 
