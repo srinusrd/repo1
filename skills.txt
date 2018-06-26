@@ -282,6 +282,15 @@ Part-4
     
     Part-5
     
+    CLear / delete Nagios history data
     
-    
+    Shut down the nagios service and remove the retention file:
+
+service nagios stop
+rm /usr/local/nagios/var/retention.dat
+service nagios start
+
+Delete the archived nagios.log files: /usr/local/nagios/var/archives/
+
+That said, I've never actually done either of these in any Nagios environment...so make sure you backup the folders/files first somewhere and then try it and verify it did what was intended.
 
