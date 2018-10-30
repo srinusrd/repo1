@@ -294,3 +294,15 @@ Delete the archived nagios.log files: /usr/local/nagios/var/archives/
 
 That said, I've never actually done either of these in any Nagios environment...so make sure you backup the folders/files first somewhere and then try it and verify it did what was intended.
 
+
+
+Roles :
+
+
+A software architect works with software components such as languages, IDEs, development methodologies, libraries, APIs, front ends, back ends. Her design is an application. She should lead teams of developers and testers.
+
+An infrastructure architect works with infrastructure components such as servers, routers, firewalls, load balancers, data center considerations, storage systems, cloud or on-premise selections, etc. Her design is an infrastructure on which applications can be built and her designs are typically implemented by system admins.
+
+An enterprise architect works with applications, infrastructures, application portfolios, business processes, business strategies and will steer entire portfolios or provide consulting to effect those changes. She works with executives and leads architects and program managers and should work at a high level - preferably with inputs into funding decisions.
+
+
